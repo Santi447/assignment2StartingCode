@@ -1,4 +1,5 @@
 package utilities;
+import exceptions.EmptyStackException;
 
 /**
  * StackADT.java
