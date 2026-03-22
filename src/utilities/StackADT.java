@@ -54,10 +54,4 @@ public interface StackADT<E> {
      */
     
     public E peek() throws EmptyStackException;
-    
-    public int size();
-    
-    public boolean isEmpty();
-    
-    public void clear();
 }
