@@ -6,12 +6,12 @@ package utilities;
  * @author Santiago Pabon
  * @version 1.0
  * 
- * Class Definition: This interface represents the public contract for the
- * implementation of Counter for the CounterADT Exercise. The counter must 
- * be a non-negative integer to be valid. The implementors of this interface 
- * will be required to add all the functionality.
+ * Class Defenition: An interface that defines the standard operations for a generic stack data structure.
+ * A stack is a collection that follows the Last-In-First-Out (LIFO) principle, where elements
+ * are added and removed from the top of the stack. 
+ * 
+ * @param <E> the type of elements held in this stack
  */
-
 public interface StackADT<E> {
     /**
      * Constructor method to create a new stack object.
