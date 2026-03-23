@@ -1,0 +1,18 @@
+# Eclipse
+.classpath
+.project
+.settings/
+bin/
+
+# IntelliJ
+.idea/
+*.iml
+out/
+
+# Compiled output
+*.class
+*.jar
+
+# OS files
+.DS_Store
+Thumbs.db
