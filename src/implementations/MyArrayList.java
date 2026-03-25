@@ -171,7 +171,7 @@ public class MyArrayList<E> implements ListADT<E> {
 		}
 
 		if (toHold.length < size) {
-			return Arrays.copyOf(elements, size);
+			toHold = Arrays.copyOf(toHold, size);
 		}
 
 		for (int i = 0; i < size; i++) {
@@ -181,11 +181,16 @@ public class MyArrayList<E> implements ListADT<E> {
 		return toHold;
 	}
 
-//	@Override
-//	public Object[] toArray() {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
+	@Override
+	public Object[] toArray() {
+		Object[] arr = new Object[size];
+
+		for (int i = 0; i < size; i++) {
+			arr[i] = elements[i];
+		}
+
+		return arr;
+	}
 
 	@Override
 	public Iterator<E> iterator() {
