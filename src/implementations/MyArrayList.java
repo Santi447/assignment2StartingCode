@@ -166,15 +166,26 @@ public class MyArrayList<E> implements ListADT<E> {
 
 	@Override
 	public E[] toArray(E[] toHold) throws NullPointerException {
-		// TODO Auto-generated method stub
-		return null;
+		if (toHold == null) {
+			throw new NullPointerException();
+		}
+
+		if (toHold.length < size) {
+			return Arrays.copyOf(elements, size);
+		}
+
+		for (int i = 0; i < size; i++) {
+			toHold[i] = elements[i];
+		}
+
+		return toHold;
 	}
 
-	@Override
-	public Object[] toArray() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+//	@Override
+//	public Object[] toArray() {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
 
 	@Override
 	public Iterator<E> iterator() {
