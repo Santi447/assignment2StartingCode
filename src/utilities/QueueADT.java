@@ -3,136 +3,132 @@ package utilities;
 import exceptions.EmptyQueueException;
 
 /**
- * QueueADT.java
- * 
- * @author Asad Arif
- * @version 1.0
- * 
- * Class Definition: An interface that defines the standard operations for a generic queue data structure.
- * A queue is a collection that follows the First-In-First-Out (FIFO) principle, where elements
- * are added at the rear and removed from the front.
- * 
- * @param <E> the type of elements held in this queue
+ * This is the professional Queue Interface for Object-Oriented Programming 3
+ * (CRPG 304) at the SAIT Polytechnic. This Queue embodies all the standard
+ * Queue operations, and includes several helper methods that will give the data
+ * structure more flexibility and use.
  */
 public interface QueueADT<E>
 {
 	/**
-	 * Constructor method to create a new queue object.
-	 *
-	 * Precondition: None.
-	 *
-	 * Postcondition: An empty queue is created.
-	 */
-	public void createQueue();
-	/**
-	 * Accessor method to return the number of elements in the queue.
+	 * Enqueue will place the added item at the last position in the queue. This
+	 * method will not allow <code>null</code> values to be added to the Queue.
 	 * 
-	 * @return the number of elements in the queue.
-	 */
-	public int size();
-
-	/**
-	 * Mutator method to remove all elements from the queue.
-	 */
-	public void dequeueAll();
-
-	/**
-	 * Mutator method to add an element to the rear of the queue.
-	 * 
-	 * Precondition: A valid Queue object exists and an element is provided.
-	 * 
-	 * Postcondition: The element is added to the rear of the queue.
-	 * 
-	 * @param toAdd the element to be enqueued.
-	 * @throws NullPointerException if the element is null.
+	 * @param toAdd the item to be added to the Queue.
+	 * @throws NullPointerException raised when a <code>null</code> object is placed
+	 *                              in the Queue.
 	 */
 	public void enqueue( E toAdd ) throws NullPointerException;
 
 	/**
-	 * Mutator method to remove and return the front element of the queue.
+	 * Dequeue will remove the first item that was placed in the Queue.
 	 * 
-	 * Precondition: A valid Queue object exists and is not empty.
-	 * 
-	 * Postcondition: The front element is removed from the queue and returned.
-	 * 
-	 * @return the element that was removed from the front of the queue.
-	 * @throws EmptyQueueException if the queue is empty.
+	 * @return the first item in the Queue.
+	 * @throws EmptyQueueException raised when the queue's length is zero (0).
 	 */
 	public E dequeue() throws EmptyQueueException;
 
 	/**
-	 * Accessor method to view the front element of the queue without removing it.
+	 * Peek provides a reference to the first item in the queue without removing
+	 * from the queue.
 	 * 
-	 * Precondition: A valid Queue object exists and is not empty.
-	 * 
-	 * Postcondition: The front element is returned but not removed.
-	 * 
-	 * @return the front element of the queue.
-	 * @throws EmptyQueueException if the queue is empty.
+	 * @return the first item in the queue.
+	 * @throws EmptyQueueException raised when the queue's length is zero (0).
 	 */
 	public E peek() throws EmptyQueueException;
+	
+	/**
+	 * dequeueAll removes all items in the queue.
+	 */
+	public void dequeueAll();
 
 	/**
-	 * Accessor method to check if the queue is empty.
+	 * Returns <code>true</code> when the queue contains no items.
 	 * 
-	 * @return true if the queue contains no elements.
+	 * @return <code>true</code> when queue length is zero (0).
 	 */
 	public boolean isEmpty();
-
+	
 	/**
-	 * Accessor method to check if the queue is full.
+	 * Returns true if this list contains the specified element. More formally,
+	 * returns true if and only if this list contains at least one element e
+	 * such that (o==null ? e==null : o.equals(e)).
 	 * 
-	 * @return true if the queue is full.
-	 */
-	public boolean isFull();
-
-	/**
-	 * Accessor method to check whether the queue contains a specific element.
-	 * 
-	 * @param toFind the element to search for.
-	 * @return true if the element is found in the queue.
-	 * @throws NullPointerException if the element is null.
+	 * @param toFind
+	 *            element whose presence in this list is to be tested.
+	 * @return true if this list contains the specified element.
+	 * @throws NullPointerException
+	 *             if the specified element is null and this list does not
+	 *             support null elements.
 	 */
 	public boolean contains( E toFind ) throws NullPointerException;
 
 	/**
-	 * Accessor method to search for an element in the queue.
+	 * Returns the 1-based position where an object is on this queue. If the
+	 * object o occurs as an item in this queue, this method returns the
+	 * distance from the front of the queue of the occurrence nearest the front of
+	 * the queue; the first item on the stack is considered to be at distance
+	 * 1. The equals method is used to compare o to the items in this queue.
 	 * 
-	 * @param toFind the element to search for.
-	 * @return the 1-based position from the front, or -1 if not found.
-	 * @throws NullPointerException if the element is null.
+	 * @param toFind
+	 *            the desired object.
+	 * @return the 1-based position from the top of the queue where the object
+	 *         is located; the return value -1 indicates that the object is not
+	 *         on the queue.
 	 */
-	public int search( E toFind ) throws NullPointerException;
+	public int search( E toFind );
 
 	/**
-	 * Accessor method to return the queue elements in an array.
+	 * Returns an iterator over the elements in this queue in proper sequence.
 	 * 
-	 * @param toHold the array used to hold the elements.
-	 * @return an array containing the queue from front to rear.
-	 * @throws NullPointerException if the array passed is null.
-	 */
-	public E[] toArray( E[] toHold ) throws NullPointerException;
-
-	/**
-	 * Accessor method to return the queue elements in an Object array.
-	 * 
-	 * @return an Object array containing the queue from front to rear.
-	 */
-	public Object[] toArray();
-
-	/**
-	 * Accessor method to return an iterator for the queue.
-	 * 
-	 * @return an iterator for the queue from front to rear.
+	 * @return an iterator over the elements in this queue in proper sequence.
 	 */
 	public Iterator<E> iterator();
 
 	/**
-	 * Accessor method to compare this queue with another queue.
+	 * Used to compare two Queue ADT's. To be equal two queues must contain equal
+	 * items appearing in the same order.
 	 * 
-	 * @param that the queue to compare with.
-	 * @return true if both queues contain the same elements in the same order.
+	 * @param that the Queue ADT to be compared to this queue.
+	 * @return <code>true</code> if the queues are equal.
 	 */
 	public boolean equals( QueueADT<E> that );
-}
 
+	/**
+	 * Returns an array containing all of the elements in this list in proper
+	 * sequence. Obeys the general contract of the Collection.toArray method.
+	 * 
+	 * @return an array containing all of the elements in this list in proper
+	 *         sequence.
+	 */
+	public Object[] toArray();
+
+	/**
+	 * Returns an array containing all of the elements in this list in proper
+	 * sequence; the runtime type of the returned array is that of the specified
+	 * array. Obeys the general contract of the Collection.toArray(Object[]) method.
+	 * 
+	 * @param toHold the array into which the elements of this queue are to be
+	 *               stored, if it is big enough; otherwise, a new array of the same
+	 *               runtime type is allocated for this purpose.
+	 * @return an array containing the elements of this queue.
+	 * @throws NullPointerException if the specified array is null.
+	 */
+	public E[] toArray( E[] holder ) throws NullPointerException;
+
+	/**
+	 * Returns true if the number of items in the queue equals the
+	 * length. This operation is only implement when a fixed length queue is
+	 * required.
+	 * 
+	 * @return <code>true</code> if queue is at capacity.
+	 */
+	public boolean isFull();
+
+	/**
+	 * Returns the length of the current queue as an integer value.
+	 * 
+	 * @return the current size to the queue as an integer.
+	 */
+	public int size();
+}
