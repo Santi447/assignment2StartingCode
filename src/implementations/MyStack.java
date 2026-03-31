@@ -12,6 +12,8 @@ package implementations;
 
 import utilities.Iterator;
 import utilities.StackADT;
+
+import java.util.Arrays;
 import java.util.EmptyStackException;
 import java.util.NoSuchElementException;
 
@@ -212,7 +214,7 @@ public class MyStack<E> implements StackADT<E>
 
         if ( holder.length < list.size() )
         {
-            holder = (E[]) new Object[list.size()];
+            holder = Arrays.copyOf(holder, this. size());
         }
 
         // fill holder in reverse so index 0 = top of stack
