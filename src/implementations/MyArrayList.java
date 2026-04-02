@@ -1,6 +1,6 @@
 /**
  * @author Santiago, Kaley Wood, Asad, Dylan
- * Southern Alberta Institute of Technology: CPRG-304
+ * Southern Alberta Institute of Technology: CPRG-304-B
  * Assignment 2: Creating ADTs, Implementing DS and an XML Parser
  * Created: 03.26.2026
  *
