@@ -1,8 +1,3 @@
-package appDomain;
-
-import java.io.IOException;
-
-import parser.XMLParser;
 /**
  * @author Santiago, Asad, Dylan, Kaley
  * Southern Alberta Institute of Technology: CPRG-304-B
@@ -13,6 +8,10 @@ import parser.XMLParser;
  * It checks for a valid file path, parses the XML file, and prints
  * the finished report or an error message if the file cannot be read.
  */
+package appDomain;
+import java.io.IOException;
+import parser.XMLParser;
+
 public class AppDriver {
 	/**
 	 * Launches the parser using the XML file path passed in from the command line.

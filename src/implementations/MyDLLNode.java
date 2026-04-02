@@ -1,4 +1,3 @@
-package implementations;
 /**
  * @author Santiago, Asad, Dylan, Kaley
  * Southern Alberta Institute of Technology: CPRG-304-B
@@ -8,6 +7,8 @@ package implementations;
  * MyDLLNode — stores one element in the doubly linked list along with
  * references to the node before it and the node after it.
  */
+package implementations;
+
 public class MyDLLNode<E>
 {
 	private E element;

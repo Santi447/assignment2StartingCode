@@ -1,11 +1,3 @@
-package implementations;
-
-import java.util.NoSuchElementException;
-
-import exceptions.EmptyQueueException;
-import utilities.Iterator;
-import utilities.QueueADT;
-
 /**
  * @author Santiago, Asad, Dylan, Kaley
  * Southern Alberta Institute of Technology: CPRG-304-B
@@ -15,6 +7,13 @@ import utilities.QueueADT;
  * MyQueue — implements a queue using a doubly linked list to store
  * elements in first-in, first-out order.
  */
+package implementations;
+import java.util.NoSuchElementException;
+import exceptions.EmptyQueueException;
+import utilities.Iterator;
+import utilities.QueueADT;
+
+
 public class MyQueue<E> implements QueueADT<E>
 {
     private MyDLL<E> list;

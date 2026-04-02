@@ -1,6 +1,13 @@
-
+/**
+ * @author Santiago, Kaley Wood, Asad, Dylan
+ * Southern Alberta Institute of Technology: CPRG-304
+ * Assignment 2: Creating ADTs, Implementing DS and an XML Parser
+ * Created: 04.02.2026
+ *
+ * XMLParser -- reads an XML document, checks for malformed structure,
+ * and reports each problematic line in file order.
+ */
 package parser;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -15,15 +22,7 @@ import implementations.MyArrayList;
 import implementations.MyQueue;
 import implementations.MyStack;
 import utilities.Iterator;
-/**
- * @author Santiago, Kaley Wood, Asad, Dylan
- * Southern Alberta Institute of Technology: CPRG-304
- * Assignment 2: Creating ADTs, Implementing DS and an XML Parser
- * Created: 04.02.2026
- *
- * XMLParser -- reads an XML document, checks for malformed structure,
- * and reports each problematic line in file order.
- */
+
 public class XMLParser
 {
 	private static final Pattern TAG_NAME_PATTERN = Pattern.compile( "[A-Za-z_][A-Za-z0-9._:-]*" );
